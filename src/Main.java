@@ -4,9 +4,8 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Field field = new Field();
         GameLogic gameLogic = new GameLogic();
-        field.createFrame();
+        gameLogic.f.createFrame();
         gameLogic.step();
         gameLogic.restart();
     }

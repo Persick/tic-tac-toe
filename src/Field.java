@@ -7,12 +7,44 @@ import java.awt.*;
  * Created by Dasha on 25.06.2016.
  */
 public class Field extends JFrame {
-    static int field[] = new int[9]; // отвечает за логику игры
+    private int field[] = new int[9]; // отвечает за логику игры
 
-    static JButton buttons[] = new JButton[9];
-    static JButton restartButton = new JButton("Restart");
+    public int[] getField() {
+        return field;
+    }
 
-    static JFrame frame = new JFrame("XO");
+    public void setField(int[] field) {
+        this.field = field;
+    }
+
+    private JButton buttons[] = new JButton[9];
+    private JButton restartButton = new JButton("Restart");
+
+    private JFrame frame = new JFrame("XO");
+
+    public JButton[] getButtons() {
+        return buttons;
+    }
+
+    public void setButtons(JButton[] buttons) {
+        this.buttons = buttons;
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
+
+    public JButton getRestartButton() {
+        return restartButton;
+    }
+
+    public void setRestartButton(JButton restartButton) {
+        this.restartButton = restartButton;
+    }
 
     public void createFrame() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,14 +78,5 @@ public class Field extends JFrame {
 
         playArea.setBorder(new LineBorder(Color.BLACK, 4));
         return playArea;
-    }
-
-    public static void redraw() {
-        for (int i = 0; i < buttons.length; i++) {
-            buttons[i].setBackground(Color.WHITE);
-            buttons[i].setEnabled(true);
-            GameLogic.numberOfStep = 0;
-            field[i] = 0;
-        }
     }
 }
